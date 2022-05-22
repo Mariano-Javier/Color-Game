@@ -3,8 +3,6 @@ let colors = generateRandomColors(modo);
 let pickedColor = pickColor(modo);
 let clickedColor;
 
-
-
 document.querySelector("#colorDisplay").textContent = pickedColor;
 
 let botones = document.querySelectorAll(".square");
@@ -12,10 +10,15 @@ let botones = document.querySelectorAll(".square");
 function game() {
   for (let i = 0; i < colors.length; i++) {
     botones[i].style.backgroundColor = colors[i];
+  }
 
+  for(let i=0;i<colors.length;i++){
     botones[i].addEventListener("click", function() {
-      clickedColor = colors[i];
-      if (clickedColor === pickedColor) {
+      clickedColor = this.style.backgroundColor;
+      console.log("clickedcolor: "+clickedColor);
+      console.log("pickedColor: "+pickedColor);
+      
+      if (clickedColor == pickedColor) {
         document.querySelector("#message").textContent = "¡Correcto!";
         changeColors(pickedColor);
         document.querySelector("h1").style.backgroundColor = pickedColor;
@@ -43,7 +46,7 @@ function pickColor(modo) {
 
 function randomColor() {
   return (
-    "rgb(" + randomNumber() + "," + randomNumber() + "," + randomNumber() + ")"
+    "rgb(" + randomNumber() + ", " + randomNumber() + ", " + randomNumber() + ")"
   );
 }
 
