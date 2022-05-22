@@ -15,16 +15,12 @@ function game() {
   for(let i=0;i<colors.length;i++){
     botones[i].addEventListener("click", function() {
       clickedColor = this.style.backgroundColor;
-      console.log("clickedcolor: "+clickedColor);
-      console.log("pickedColor: "+pickedColor);
       
       if (clickedColor == pickedColor) {
         document.querySelector("#message").textContent = "¡Correcto!";
         changeColors(pickedColor);
         document.querySelector("h1").style.backgroundColor = pickedColor;
-        document.querySelector("#reset").textContent = "Play Again?";
-        document.querySelector(".container").style['pointer-events'] = "none";
-        
+        document.querySelector("#reset").textContent = "Play Again?";     
       } else {
         document.querySelector("#message").textContent = "Intentalo Nuevamente";
         botones[i].style.backgroundColor = "rgb(35, 35, 35)";
@@ -32,6 +28,7 @@ function game() {
     });
   }
 }
+
 game();
 
 function changeColors(color) {
@@ -69,7 +66,6 @@ function resetGame(modo) {
   document.querySelector("h1").style.backgroundColor = "steelblue";  
   document.querySelector("#reset").textContent = "Nuevos Colores";
   document.querySelector("#message").textContent = "";
-  document.querySelector(".container").style['pointer-events'] = "initial"
   game();
 }
 
