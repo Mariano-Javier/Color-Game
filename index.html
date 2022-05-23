@@ -10,19 +10,22 @@
   <body>
     <h1>The Great <span id="colorDisplay">RGB</span> Guessing Game</h1>
 
-    <div class="center" id="stripe">
-      <button id="reset">Nuevos Colores</button> <span id="message"></span>
-      <button id="easy">EASY</button>
-      <button id="hard" class="selected">HARD</button>
+    <div class="stripe">
+      <button id="reset">Nuevos Colores</button>
+      <span id="message"></span>
+      <div class="dificultad">
+        <button id="easy">EASY</button>
+        <button id="hard" class="selected">HARD</button>
+      </div>
     </div>
 
     <div class="container">
       <div class="square"></div>
       <div class="square"></div>
       <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
+      <div class="square hide"></div>
+      <div class="square hide"></div>
+      <div class="square hide"></div>
     </div>
 
     <script src="script.js"></script>
